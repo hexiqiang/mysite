@@ -41,6 +41,13 @@ INSTALLED_APPS = [
     'crispy_forms',
     'reversion',
     'xadmins',
+
+    # 注册网站前台应用
+    'app',
+    'about',
+    'single',
+    'contact',
+
 ]
 
 MIDDLEWARE = [
@@ -123,4 +130,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)

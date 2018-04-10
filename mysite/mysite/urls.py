@@ -20,7 +20,14 @@ import xadmin
 
 # from xadmin.plugins import xversion
 # xversion.register_models()
-
+from app import views as app
+from about import views as about
+from single import views as single
+from contact import views as contact
 urlpatterns = [
-    path('xadmin/', xadmin.site.urls)
+    path('xadmin/', xadmin.site.urls),
+    path('', app.index),
+    path('about/', about.index),
+    path('single/', single.index),
+    path('contact/', contact.index)
 ]
