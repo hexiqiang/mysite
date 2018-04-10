@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import xadmin
+
+from django.conf import settings
+from django.conf.urls.static import static
 # xadmin.autodiscover()
 
 # from xadmin.plugins import xversion
@@ -30,4 +33,4 @@ urlpatterns = [
     path('about/', about.index),
     path('single/', single.index),
     path('contact/', contact.index)
-]
+] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
