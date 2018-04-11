@@ -31,6 +31,6 @@ urlpatterns = [
     path('xadmin/', xadmin.site.urls),
     path('', app.index),
     path('about/', about.index),
-    path('single/', single.index),
+    path('single/<int:id>', single.index),
     path('contact/', contact.index)
 ] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
